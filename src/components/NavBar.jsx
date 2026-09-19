@@ -6,7 +6,7 @@ export function NavBar() {
     
         <div className="flex items-center">
             <img className="w-8"src={BrandLogo} alt="The Grand Velora Hotel" />
-            <div className="ml-2 text-xl font-semibold text-[#ffd21f]">
+            <div className="ml-2 text-xl hidden xl:block font-semibold text-[#ffd21f]">
                 The Grand Velora Hotel
             </div>
         </div>
@@ -24,7 +24,7 @@ export function NavBar() {
             </a>
         </div> {/* Mobile Menu Button */}
 
-        <button className="md:hidden text-2xl text-white">
+        <button className="md:hidden text-2xl text-[#ffd21f]">
             ☰
         </button>
 
