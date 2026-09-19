@@ -3,7 +3,7 @@ import HotelImage from '../assets/hotel-image.webp';
 export function HeroSection() {
   return (
     <section className="relative min-h-[calc(100vh-64px)] flex items-start xl:items-center">
-        <div className="flex flex-col xl:flex-row w-full gap-5 xl:gap-10 mx-5 xl:mx-10">
+        <div className="flex flex-col xl:flex-row w-full gap-5 xl:gap-10 mx-8 xl:mx-10">
 
             {/* Title */}
             <h1 className="text-[36px] sm:text-[40px] md:text-[48px] lg:text-[56px] xl:text-[70px] font-bold text-[#ffd21f] text-center xl:hidden mt-10">
@@ -27,7 +27,7 @@ export function HeroSection() {
                 <p className="text-[20px] xl:text-[40px] font-['Ephesis'] text-[#ffd21f]">
                     A Stay Worth Remembering
                 </p>
-                <button className="px-2 xl:px-10 py-1 xl:py-3 bg-[#ffd21f] text-[#013220] text-[25px] xl:text-[40px] font-semibold rounded-[50px] cursor-pointer transition-all duration-300 hover:bg-[#013220] hover:text-[#ffd21f] hover:-translate-y-1 hover:shadow-lg mt-3.5">
+                <button className="px-5 xl:px-10 py-1 xl:py-3 bg-[#ffd21f] text-[#013220] text-[24px] xl:text-[40px] font-semibold rounded-[50px] cursor-pointer transition-all duration-300 hover:bg-[#013220] hover:text-[#ffd21f] hover:-translate-y-1 hover:shadow-lg mt-3.5">
                     Book Now
                 </button>
             </div> 
