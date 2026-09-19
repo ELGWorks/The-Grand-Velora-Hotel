@@ -1,15 +1,16 @@
-// import { useState } from 'react'
-import { NavBar } from './components/NavBar';
-import { HeroSection } from './components/HeroSection';
-import './App.css'
+import { Routes, Route } from 'react-router';
+import { HomePage } from './pages/HomePage';
+import { BookingPage } from './pages/BookingPage';
+import './App.css';
 
 function App() {
   return (
-    <>
-      <NavBar />
-      <HeroSection />
-    </>
-  )
+    <Routes>
+      <Route index element={<HomePage />} />
+      <Route path="/setbooking" element={<BookingPage />} />
+      {/* <Route path="/contact" element={<ContactPage />} /> */}
+    </Routes>
+  );
 }
 
-export default App
+export default App;
