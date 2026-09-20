@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 import HotelImage from "../assets/hotel-image.webp";
 
 export function HomePage() {
@@ -115,6 +116,7 @@ export function HomePage() {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 }
