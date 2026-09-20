@@ -53,9 +53,9 @@ export function RoomSelectionPage() {
 
       <main className="min-h-screen px-6 py-32 pb-40">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl font-bold text-[#013220]">Available Rooms</h1>
+          <h1 className="text-4xl font-bold text-white">Available Rooms</h1>
 
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-white">
             {guests} {guests === 1 ? "Guest" : "Guests"}
           </p>
 

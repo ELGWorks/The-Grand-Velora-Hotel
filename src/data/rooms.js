@@ -1,3 +1,12 @@
+import velora1 from "../assets/rooms/1-velora.webp";
+import velora2 from "../assets/rooms/2-velora.webp";
+import velora3 from "../assets/rooms/3-velora.webp";
+import velora4 from "../assets/rooms/4-velora.webp";
+import velora4_2 from "../assets/rooms/4-velora-2.webp";
+import velora5 from "../assets/rooms/5-velora.webp";
+import velora6 from "../assets/rooms/6-velora.webp";
+import velora7 from "../assets/rooms/7-velora.webp";
+
 export const rooms = [
   // =====================================================
   // 1 GUEST
@@ -9,7 +18,7 @@ export const rooms = [
     name: "Velora Simple",
     capacity: 1,
     pricePerNight: 5000,
-    image: "...",
+    image: velora1,
     bathrooms: 1,
     beds: 1,
     amenities: [
@@ -26,7 +35,7 @@ export const rooms = [
     name: "Velora Classic",
     capacity: 1,
     pricePerNight: 6500,
-    image: "...",
+    image: velora2,
     bathrooms: 1,
     beds: 1,
     amenities: [
@@ -44,7 +53,7 @@ export const rooms = [
     name: "Velora Classic Plus",
     capacity: 1,
     pricePerNight: 8000,
-    image: "...",
+    image: velora3,
     bathrooms: 1,
     beds: 1,
     amenities: [
@@ -64,7 +73,7 @@ export const rooms = [
     name: "Velora Express",
     capacity: 1,
     pricePerNight: 9500,
-    image: "...",
+    image: velora4,
     bathrooms: 1,
     beds: 1,
     amenities: [
@@ -85,7 +94,7 @@ export const rooms = [
     name: "Velora Grand",
     capacity: 1,
     pricePerNight: 12000,
-    image: "...",
+    image: velora5,
     bathrooms: 1,
     beds: 1,
     amenities: [
@@ -113,7 +122,7 @@ export const rooms = [
     name: "Velora Simple",
     capacity: 2,
     pricePerNight: 7000,
-    image: "...",
+    image: velora6,
     bathrooms: 1,
     beds: 1,
     amenities: [
@@ -130,7 +139,7 @@ export const rooms = [
     name: "Velora Classic",
     capacity: 2,
     pricePerNight: 8500,
-    image: "...",
+    image: velora7,
     bathrooms: 1,
     beds: 1,
     amenities: [
@@ -148,7 +157,7 @@ export const rooms = [
     name: "Velora Classic Plus",
     capacity: 2,
     pricePerNight: 10000,
-    image: "...",
+    image: velora1,
     bathrooms: 1,
     beds: 2,
     amenities: [
@@ -168,7 +177,7 @@ export const rooms = [
     name: "Velora Express",
     capacity: 2,
     pricePerNight: 12000,
-    image: "...",
+    image: velora2,
     bathrooms: 1,
     beds: 2,
     amenities: [
@@ -189,7 +198,7 @@ export const rooms = [
     name: "Velora Grand",
     capacity: 2,
     pricePerNight: 15000,
-    image: "...",
+    image: velora3,
     bathrooms: 2,
     beds: 2,
     amenities: [
@@ -217,7 +226,7 @@ export const rooms = [
     name: "Velora Simple",
     capacity: 3,
     pricePerNight: 10000,
-    image: "...",
+    image: velora4,
     bathrooms: 1,
     beds: 3,
     amenities: [
@@ -234,7 +243,7 @@ export const rooms = [
     name: "Velora Classic",
     capacity: 3,
     pricePerNight: 12000,
-    image: "...",
+    image: velora5,
     bathrooms: 1,
     beds: 3,
     amenities: [
@@ -252,7 +261,7 @@ export const rooms = [
     name: "Velora Classic Plus",
     capacity: 3,
     pricePerNight: 14000,
-    image: "...",
+    image: velora6,
     bathrooms: 2,
     beds: 3,
     amenities: [
@@ -272,7 +281,7 @@ export const rooms = [
     name: "Velora Express",
     capacity: 3,
     pricePerNight: 17000,
-    image: "...",
+    image: velora7,
     bathrooms: 2,
     beds: 3,
     amenities: [
@@ -293,7 +302,7 @@ export const rooms = [
     name: "Velora Grand",
     capacity: 3,
     pricePerNight: 20000,
-    image: "...",
+    image: velora1,
     bathrooms: 2,
     beds: 3,
     amenities: [
@@ -321,7 +330,7 @@ export const rooms = [
     name: "Velora Simple",
     capacity: 4,
     pricePerNight: 14000,
-    image: "...",
+    image: velora2,
     bathrooms: 1,
     beds: 4,
     amenities: [
@@ -338,7 +347,7 @@ export const rooms = [
     name: "Velora Classic",
     capacity: 4,
     pricePerNight: 16000,
-    image: "...",
+    image: velora4_2,
     bathrooms: 2,
     beds: 4,
     amenities: [
@@ -356,7 +365,7 @@ export const rooms = [
     name: "Velora Classic Plus",
     capacity: 4,
     pricePerNight: 19000,
-    image: "...",
+    image: velora3,
     bathrooms: 2,
     beds: 4,
     amenities: [
@@ -377,7 +386,7 @@ export const rooms = [
     name: "Velora Express",
     capacity: 4,
     pricePerNight: 22000,
-    image: "...",
+    image: velora4,
     bathrooms: 2,
     beds: 4,
     amenities: [
@@ -399,7 +408,7 @@ export const rooms = [
     name: "Velora Grand",
     capacity: 4,
     pricePerNight: 26000,
-    image: "...",
+    image: velora5,
     bathrooms: 3,
     beds: 4,
     amenities: [
@@ -428,7 +437,7 @@ export const rooms = [
     name: "Velora Simple",
     capacity: 5,
     pricePerNight: 17000,
-    image: "...",
+    image: velora5,
     bathrooms: 2,
     beds: 5,
     amenities: [
@@ -445,7 +454,7 @@ export const rooms = [
     name: "Velora Classic",
     capacity: 5,
     pricePerNight: 19000,
-    image: "...",
+    image: velora6,
     bathrooms: 2,
     beds: 5,
     amenities: [
@@ -463,7 +472,7 @@ export const rooms = [
     name: "Velora Classic Plus",
     capacity: 5,
     pricePerNight: 22000,
-    image: "...",
+    image: velora7,
     bathrooms: 2,
     beds: 5,
     amenities: [
@@ -484,7 +493,7 @@ export const rooms = [
     name: "Velora Express",
     capacity: 5,
     pricePerNight: 26000,
-    image: "...",
+    image: velora2,
     bathrooms: 2,
     beds: 5,
     amenities: [
@@ -506,7 +515,7 @@ export const rooms = [
     name: "Velora Grand",
     capacity: 5,
     pricePerNight: 30000,
-    image: "...",
+    image: velora3,
     bathrooms: 3,
     beds: 5,
     amenities: [
@@ -535,7 +544,7 @@ export const rooms = [
     name: "Velora Simple",
     capacity: 6,
     pricePerNight: 20000,
-    image: "...",
+    image: velora6,
     bathrooms: 2,
     beds: 6,
     amenities: [
@@ -552,7 +561,7 @@ export const rooms = [
     name: "Velora Classic",
     capacity: 6,
     pricePerNight: 22000,
-    image: "...",
+    image: velora3,
     bathrooms: 2,
     beds: 6,
     amenities: [
@@ -570,7 +579,7 @@ export const rooms = [
     name: "Velora Classic Plus",
     capacity: 6,
     pricePerNight: 25000,
-    image: "...",
+    image: velora4,
     bathrooms: 2,
     beds: 6,
     amenities: [
@@ -591,7 +600,7 @@ export const rooms = [
     name: "Velora Express",
     capacity: 6,
     pricePerNight: 28000,
-    image: "...",
+    image: velora5,
     bathrooms: 3,
     beds: 6,
     amenities: [
@@ -613,7 +622,7 @@ export const rooms = [
     name: "Velora Grand",
     capacity: 6,
     pricePerNight: 33000,
-    image: "...",
+    image: velora6,
     bathrooms: 3,
     beds: 6,
     amenities: [
@@ -642,7 +651,7 @@ export const rooms = [
     name: "Velora Simple",
     capacity: 7,
     pricePerNight: 22000,
-    image: "...",
+    image: velora7,
     bathrooms: 2,
     beds: 7,
     amenities: [
@@ -659,7 +668,7 @@ export const rooms = [
     name: "Velora Classic",
     capacity: 7,
     pricePerNight: 25000,
-    image: "...",
+    image: velora2,
     bathrooms: 2,
     beds: 7,
     amenities: [
@@ -677,7 +686,7 @@ export const rooms = [
     name: "Velora Classic Plus",
     capacity: 7,
     pricePerNight: 28000,
-    image: "...",
+    image: velora3,
     bathrooms: 3,
     beds: 7,
     amenities: [
@@ -698,7 +707,7 @@ export const rooms = [
     name: "Velora Express",
     capacity: 7,
     pricePerNight: 32000,
-    image: "...",
+    image: velora4,
     bathrooms: 3,
     beds: 7,
     amenities: [
@@ -720,7 +729,7 @@ export const rooms = [
     name: "Velora Grand",
     capacity: 7,
     pricePerNight: 38000,
-    image: "...",
+    image: velora5,
     bathrooms: 3,
     beds: 7,
     amenities: [
