@@ -48,7 +48,7 @@ export function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="min-h-screen px-6 py-20 md:px-10 flex flex-col justify-center bg-[#1D1D1F]">
+      <section className="min-h-screen px-6 py-5 md:px-10 flex flex-col justify-center mt-5 gap-0 xl:gap-25 xl:mt-0 bg-[#1D1D1F]">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-[#ffd21f]">
             What Our Guests Say

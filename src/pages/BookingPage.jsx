@@ -4,12 +4,33 @@ import { Users } from "lucide-react";
 import { ArrowRight } from "lucide-react";
 import { Footer } from "../components/Footer";
 import { DatePickerModal } from "../components/DatePickerModal";
+import { GuestSelector } from "../components/GuestSelector";
 import { useState } from "react";
+import { rooms } from "../data/rooms";
+import { useNavigate } from "react-router";
 
 export function BookingPage() {
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [checkIn, setCheckIn] = useState(null);
   const [checkOut, setCheckOut] = useState(null);
+  const [showGuestSelector, setShowGuestSelector] = useState(false);
+  const [guests, setGuests] = useState(1);
+  const navigate = useNavigate();
+
+  function handleSearch() {
+    const matchingRooms = rooms.filter(
+      (room) => room.capacity === guests
+    );
+
+    navigate("/rooms", {
+      state: {
+        rooms: matchingRooms,
+        checkIn: checkIn,
+        checkOut: checkOut,
+        guests: guests,
+      },
+    });
+  }
 
   return (
     <>
@@ -35,12 +56,12 @@ export function BookingPage() {
               ? checkOut.toLocaleDateString()
               : "Check-out"}
           </button>
-          <button className=" group flex justify-center items-center flex-row gap-3 w-full max-w-2xl bg-white rounded-3xl shadow-2xl p-8 md:p-10 flex flex-col border-2 border-black text-xl cursor-pointer hover:bg-[#013220] hover:text-[#ffd21f] hover:border-[#ffd21f]">
+          <button className=" group flex justify-center items-center flex-row gap-3 w-full max-w-2xl bg-white rounded-3xl shadow-2xl p-8 md:p-10 flex flex-col border-2 border-black text-xl cursor-pointer hover:bg-[#013220] hover:text-[#ffd21f] hover:border-[#ffd21f]" onClick={() => setShowGuestSelector(true)}>
             <Users className="text-black group-hover:text-[#ffd21f] transition-all duration-300" size={24} />
-            <p>1</p>
-            Guest
+            <p>{guests}</p>
+            {guests === 1 ? "Guest" : "Guests"}
           </button>
-          <button className="flex justify-center items-center flex-row gap-3 w-full max-w-2xl bg-[#013220] rounded-3xl shadow-2xl p-8 md:p-10 flex flex-col border-2 border-black text-xl text-[#ffd21f] cursor-pointer hover:bg-[#013220] hover:text-[#ffd21f] hover:border-[#ffd21f]">
+          <button className="flex justify-center items-center flex-row gap-3 w-full max-w-2xl bg-[#013220] rounded-3xl shadow-2xl p-8 md:p-10 flex flex-col border-2 border-black text-xl text-[#ffd21f] cursor-pointer hover:bg-[#013220] hover:text-[#ffd21f] hover:border-[#ffd21f]" onClick={handleSearch}>
             Search
           </button>
 
@@ -53,6 +74,15 @@ export function BookingPage() {
             setCheckIn(startDate);
             setCheckOut(endDate);
             setShowDatePicker(false);
+          }}
+        />
+      )}
+      {showGuestSelector && (
+        <GuestSelector
+          onClose={() => setShowGuestSelector(false)}
+          onSave={(selectedGuests) => {
+            setGuests(selectedGuests);
+            setShowGuestSelector(false);
           }}
         />
       )}
