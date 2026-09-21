@@ -38,9 +38,21 @@ export function GuestInfoPage() {
     });
   }
 
+  const hasEnteredInfo = fullName || email || phone || specialRequests;
+
+  function handleHomeClick() {
+    if (!hasEnteredInfo) {
+      return true;
+    }
+
+    return window.confirm(
+      "You have entered information that may be lost. Are you sure you want to leave this page?",
+    );
+  }
+
   return (
     <>
-      <Header />
+      <Header onNavigate={handleHomeClick} />
 
       <main className="min-h-screen px-4 sm:px-6 py-32 overflow-x-hidden">
         <div className="max-w-6xl mx-auto">

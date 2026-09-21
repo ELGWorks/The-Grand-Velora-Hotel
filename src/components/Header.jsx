@@ -2,35 +2,46 @@ import { useState } from "react";
 import { Link } from "react-router";
 import BrandLogo from "../assets/TGVH-Logo-wo-text.svg";
 
-export function Header() {
+export function Header({ onNavigate }) {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  function handleNavigation(event) {
+    if (onNavigate && !onNavigate()) {
+      event.preventDefault();
+      return;
+    }
+
+    setMenuOpen(false);
+    window.scrollTo(0, 0);
+  }
 
   return (
     <>
       <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-4 bg-[#013220] shadow-sm border-b border-[#ffd21f]">
         <div className="flex items-center xl:ml-[65px]">
-          <Link to="/">
+          {/* Logo / Image */}
+          <Link
+            to="/"
+            className="flex items-center"
+            onClick={handleNavigation}
+          >
             <img
               className="w-8"
               src={BrandLogo}
               alt="The Grand Velora Hotel"
-              onClick={() => {
-                setMenuOpen(false);
-                window.scrollTo(0, 0);
-              }}
             />
-          </Link>
 
-          <div className="ml-2 text-xl hidden xl:block font-semibold text-[#ffd21f]">
-            The Grand Velora Hotel
-          </div>
+            <div className="ml-2 text-xl hidden xl:block font-semibold text-[#ffd21f]">
+              The Grand Velora Hotel
+            </div>
+          </Link>
         </div>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-5 xl:mr-[80px]">
           <Link
             to="/"
-            onClick={() => window.scrollTo(0, 0)}
+            onClick={handleNavigation}
             className="text-[#ffd21f] hover:text-white transition"
           >
             Home
@@ -38,7 +49,7 @@ export function Header() {
 
           <Link
             to="/setbooking"
-            onClick={() => window.scrollTo(0, 0)}
+            onClick={handleNavigation}
             className="text-[#ffd21f] hover:text-white transition"
           >
             Book now
@@ -46,7 +57,7 @@ export function Header() {
 
           <Link
             to="/contact"
-            onClick={() => window.scrollTo(0, 0)}
+            onClick={handleNavigation}
             className="text-[#ffd21f] hover:text-white transition"
           >
             Contact
@@ -68,10 +79,7 @@ export function Header() {
           <div className="flex flex-col items-center gap-10 text-3xl font-semibold">
             <Link
               to="/"
-              onClick={() => {
-                setMenuOpen(false);
-                window.scrollTo(0, 0);
-              }}
+              onClick={handleNavigation}
               className="text-white hover:text-[#ffd21f]"
             >
               Home
@@ -79,21 +87,15 @@ export function Header() {
 
             <Link
               to="/setbooking"
+              onClick={handleNavigation}
               className="text-white hover:text-[#ffd21f]"
-              onClick={() => {
-                setMenuOpen(false);
-                window.scrollTo(0, 0);
-              }}
             >
               Book now
             </Link>
 
             <Link
               to="/terms"
-              onClick={() => {
-                setMenuOpen(false);
-                window.scrollTo(0, 0);
-              }}
+              onClick={handleNavigation}
               className="text-white hover:text-[#ffd21f]"
             >
               Terms & Conditions
@@ -101,10 +103,7 @@ export function Header() {
 
             <Link
               to="/contact"
-              onClick={() => {
-                setMenuOpen(false);
-                window.scrollTo(0, 0);
-              }}
+              onClick={handleNavigation}
               className="text-white hover:text-[#ffd21f]"
             >
               Contact
