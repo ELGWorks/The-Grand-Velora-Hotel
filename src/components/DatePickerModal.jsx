@@ -5,7 +5,7 @@ export function DatePickerModal({ onClose, onSave }) {
   today.setHours(0, 0, 0, 0);
 
   const [currentMonth, setCurrentMonth] = useState(
-    new Date(today.getFullYear(), today.getMonth(), 1)
+    new Date(today.getFullYear(), today.getMonth(), 1),
   );
 
   const [startDate, setStartDate] = useState(null);
@@ -15,14 +15,14 @@ export function DatePickerModal({ onClose, onSave }) {
   const daysInMonth = new Date(
     currentMonth.getFullYear(),
     currentMonth.getMonth() + 1,
-    0
+    0,
   ).getDate();
 
   // Get the first day of the month
   const firstDay = new Date(
     currentMonth.getFullYear(),
     currentMonth.getMonth(),
-    1
+    1,
   ).getDay();
 
   // Handle clicking a date
@@ -30,7 +30,7 @@ export function DatePickerModal({ onClose, onSave }) {
     const selectedDate = new Date(
       currentMonth.getFullYear(),
       currentMonth.getMonth(),
-      day
+      day,
     );
 
     if (!startDate || endDate) {
@@ -62,7 +62,7 @@ export function DatePickerModal({ onClose, onSave }) {
     const previous = new Date(
       currentMonth.getFullYear(),
       currentMonth.getMonth() - 1,
-      1
+      1,
     );
 
     // Don't go before the current month
@@ -74,11 +74,7 @@ export function DatePickerModal({ onClose, onSave }) {
   // Move to next month
   function nextMonth() {
     setCurrentMonth(
-      new Date(
-        currentMonth.getFullYear(),
-        currentMonth.getMonth() + 1,
-        1
-      )
+      new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 1),
     );
   }
 
@@ -93,7 +89,7 @@ export function DatePickerModal({ onClose, onSave }) {
     const date = new Date(
       currentMonth.getFullYear(),
       currentMonth.getMonth(),
-      day
+      day,
     );
 
     return date < today;
@@ -103,7 +99,7 @@ export function DatePickerModal({ onClose, onSave }) {
     const date = new Date(
       currentMonth.getFullYear(),
       currentMonth.getMonth(),
-      day
+      day,
     );
 
     return (
@@ -118,7 +114,7 @@ export function DatePickerModal({ onClose, onSave }) {
     const date = new Date(
       currentMonth.getFullYear(),
       currentMonth.getMonth(),
-      day
+      day,
     );
 
     return date > startDate && date < endDate;
@@ -127,10 +123,7 @@ export function DatePickerModal({ onClose, onSave }) {
   return (
     <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/50 px-6">
       <div className="w-full max-w-lg bg-white rounded-3xl shadow-2xl p-8">
-
-        <h2 className="text-2xl font-bold text-[#013220]">
-          Select Dates
-        </h2>
+        <h2 className="text-2xl font-bold text-[#013220]">Select Dates</h2>
 
         {/* Month navigation */}
         <div className="flex items-center justify-between mt-6">
@@ -141,9 +134,7 @@ export function DatePickerModal({ onClose, onSave }) {
             ←
           </button>
 
-          <h3 className="font-semibold text-lg">
-            {formatMonth(currentMonth)}
-          </h3>
+          <h3 className="font-semibold text-lg">{formatMonth(currentMonth)}</h3>
 
           <button
             onClick={nextMonth}
@@ -166,7 +157,6 @@ export function DatePickerModal({ onClose, onSave }) {
 
         {/* Calendar dates */}
         <div className="grid grid-cols-7 gap-2 mt-2">
-
           {/* Empty spaces before first day */}
           {Array.from({ length: firstDay }).map((_, index) => (
             <div key={`empty-${index}`} />
@@ -186,25 +176,19 @@ export function DatePickerModal({ onClose, onSave }) {
                 onClick={() => handleDateClick(day)}
                 className={`
                   h-10 rounded-lg transition
-                  ${past
-                    ? "text-gray-300 cursor-not-allowed"
-                    : "hover:bg-[#013220] hover:text-[#ffd21f] cursor-pointer"
+                  ${
+                    past
+                      ? "text-gray-300 cursor-not-allowed"
+                      : "hover:bg-[#013220] hover:text-[#ffd21f] cursor-pointer"
                   }
-                  ${selected
-                    ? "bg-[#013220] text-[#ffd21f]"
-                    : ""
-                  }
-                  ${between
-                    ? "bg-[#013220]/10"
-                    : ""
-                  }
+                  ${selected ? "bg-[#013220] text-[#ffd21f]" : ""}
+                  ${between ? "bg-[#013220]/10" : ""}
                 `}
               >
                 {day}
               </button>
             );
           })}
-
         </div>
 
         {/* Selected dates */}
@@ -212,27 +196,21 @@ export function DatePickerModal({ onClose, onSave }) {
           <p>
             Check-in:{" "}
             <span className="font-semibold">
-              {startDate
-                ? startDate.toLocaleDateString()
-                : "Not selected"}
+              {startDate ? startDate.toLocaleDateString() : "Not selected"}
             </span>
           </p>
 
           <p>
             Check-out:{" "}
             <span className="font-semibold">
-              {endDate
-                ? endDate.toLocaleDateString()
-                : "Not selected"}
+              {endDate ? endDate.toLocaleDateString() : "Not selected"}
             </span>
           </p>
         </div>
 
         {/* Buttons */}
         <div className="flex justify-center mt-8">
-
           <div className="flex items-center gap-2 xl:gap-10">
-
             <button
               onClick={onClose}
               className="px-5 py-3 rounded-xl border-2 border-[#013220] text-[#013220] hover:bg-[#013220] hover:text-[#ffd21f] transition-all duration-300 cursor-pointer"
@@ -254,11 +232,8 @@ export function DatePickerModal({ onClose, onSave }) {
             >
               Save
             </button>
-
           </div>
-
         </div>
-
       </div>
     </div>
   );

@@ -18,9 +18,12 @@ export function BookingPage() {
   const navigate = useNavigate();
 
   function handleSearch() {
-    const matchingRooms = rooms.filter(
-      (room) => room.capacity === guests
-    );
+    if (!checkIn || !checkOut) {
+      alert("Please select your check-in and check-out dates.");
+      return;
+    }
+
+    const matchingRooms = rooms.filter((room) => room.capacity === guests);
 
     navigate("/rooms", {
       state: {
@@ -39,32 +42,35 @@ export function BookingPage() {
 
       <div className="min-h-screen flex justify-center items-center px-6">
         <div className="w-full max-w-2xl bg-white rounded-3xl shadow-2xl p-8 md:p-10 flex flex-col gap-5">
-          
           <button
             onClick={() => setShowDatePicker(true)}
             className="group flex justify-center items-center flex-row gap-3 w-full max-w-2xl bg-white rounded-3xl shadow-2xl p-8 md:p-10 border-2 border-black text-[14px] md:text-[18px] xl:text-[20px] cursor-pointer hover:bg-[#013220] hover:text-[#ffd21f] hover:border-[#ffd21f] transition-all duration-300 ease-in-out"
           >
             <Calendar className="text-black group-hover:text-[#ffd21f] transition-all duration-300 w-5" />
 
-            {checkIn
-              ? checkIn.toLocaleDateString()
-              : "Check-in"}
+            {checkIn ? checkIn.toLocaleDateString() : "Check-in"}
 
             <ArrowRight className="w-4" />
 
-            {checkOut
-              ? checkOut.toLocaleDateString()
-              : "Check-out"}
+            {checkOut ? checkOut.toLocaleDateString() : "Check-out"}
           </button>
-          <button className=" group flex justify-center items-center flex-row gap-3 w-full max-w-2xl bg-white rounded-3xl shadow-2xl p-8 md:p-10 flex flex-col border-2 border-black text-xl cursor-pointer hover:bg-[#013220] hover:text-[#ffd21f] hover:border-[#ffd21f]" onClick={() => setShowGuestSelector(true)}>
-            <Users className="text-black group-hover:text-[#ffd21f] transition-all duration-300" size={24} />
+          <button
+            className=" group flex justify-center items-center flex-row gap-3 w-full max-w-2xl bg-white rounded-3xl shadow-2xl p-8 md:p-10 flex flex-col border-2 border-black text-xl cursor-pointer hover:bg-[#013220] hover:text-[#ffd21f] hover:border-[#ffd21f]"
+            onClick={() => setShowGuestSelector(true)}
+          >
+            <Users
+              className="text-black group-hover:text-[#ffd21f] transition-all duration-300"
+              size={24}
+            />
             <p>{guests}</p>
             {guests === 1 ? "Guest" : "Guests"}
           </button>
-          <button className="flex justify-center items-center flex-row gap-3 w-full max-w-2xl bg-[#013220] rounded-3xl shadow-2xl p-8 md:p-10 flex flex-col border-2 border-black text-xl text-[#ffd21f] cursor-pointer hover:bg-[#013220] hover:text-[#ffd21f] hover:border-[#ffd21f]" onClick={handleSearch}>
+          <button
+            className="flex justify-center items-center flex-row gap-3 w-full max-w-2xl bg-[#013220] rounded-3xl shadow-2xl p-8 md:p-10 flex flex-col border-2 border-black text-xl text-[#ffd21f] cursor-pointer hover:bg-[#013220] hover:text-[#ffd21f] hover:border-[#ffd21f]"
+            onClick={handleSearch}
+          >
             Search
           </button>
-
         </div>
       </div>
       {showDatePicker && (

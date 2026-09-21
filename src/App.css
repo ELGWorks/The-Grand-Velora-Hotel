@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial;
   background: linear-gradient(135deg, #013220, #0a5c3a);

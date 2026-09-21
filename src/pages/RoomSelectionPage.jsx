@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { useLocation } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { RoomCard } from "../components/RoomCard";
 import { Trash2 } from "lucide-react";
 
 export function RoomSelectionPage() {
+  const navigate = useNavigate();
   const location = useLocation();
   const { rooms = [], checkIn, checkOut, guests } = location.state || {};
 
@@ -25,6 +26,18 @@ export function RoomSelectionPage() {
 
   function handleRemoveRoom(roomId) {
     setSelectedRooms(selectedRooms.filter((room) => room.id !== roomId));
+  }
+
+  function handleContinue() {
+    navigate("/guest-info", {
+      state: {
+        selectedRooms,
+        checkIn,
+        checkOut,
+        guests,
+        totalPrice,
+      },
+    });
   }
 
   function isRoomSelected(roomId) {
@@ -133,6 +146,7 @@ export function RoomSelectionPage() {
                 </div>
 
                 <button
+                  onClick={handleContinue}
                   disabled={selectedRooms.length === 0}
                   className="w-full mt-6 px-5 py-3 rounded-xl bg-[#013220] text-[#ffd21f] hover:bg-[#ffd21f] hover:text-[#013220] transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
                 >
@@ -194,6 +208,10 @@ export function RoomSelectionPage() {
           </div>
 
           <button
+            onClick={() => {
+              handleContinue();
+              window.scrollTo(0, 0);
+            }}
             disabled={selectedRooms.length === 0}
             className="px-6 py-3 rounded-xl bg-[#013220] text-[#ffd21f] font-semibold hover:bg-[#ffd21f] hover:text-[#013220] transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed"
           >

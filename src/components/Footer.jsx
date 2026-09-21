@@ -1,29 +1,43 @@
+import { Link } from "react-router";
+
 export function Footer() {
   return (
     <footer className="bg-[#013220] border-t border-[#ffd21f] text-white px-6 py-10">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-
         {/* Hotel Name */}
         <div className="text-center md:text-left">
           <h2 className="text-xl font-semibold text-[#ffd21f]">
             The Grand Velora Hotel
           </h2>
-          <p className="text-sm text-gray-300 mt-1">
-            A Stay Worth Remembering
-          </p>
+          <p className="text-sm text-gray-300 mt-1">A Stay Worth Remembering</p>
         </div>
 
         {/* Navigation */}
         <div className="flex gap-6">
-          <a href="/" className="hover:text-[#ffd21f] transition">
+          <Link
+            to="/"
+            onClick={() => window.scrollTo(0, 0)}
+            className="text-[#ffd21f] hover:text-white transition"
+          >
             Home
-          </a>
+          </Link>
 
-          <a href="/contact" className="hover:text-[#ffd21f] transition">
+          <Link
+            to="/terms"
+            onClick={() => window.scrollTo(0, 0)}
+            className="text-[#ffd21f] hover:text-white transition"
+          >
+            Terms & Conditions
+          </Link>
+
+          <Link
+            to="/contact"
+            onClick={() => window.scrollTo(0, 0)}
+            className="text-[#ffd21f] hover:text-white transition"
+          >
             Contact
-          </a>
+          </Link>
         </div>
-
       </div>
 
       {/* Bottom */}

@@ -21,7 +21,7 @@ export function HomePage() {
             <img
               src={HotelImage}
               alt="The Grand Velora Hotel"
-              className="w-200 aspect-[4/3] object-cover rounded-[50px]"
+              className="w-200 aspect-[4/3] object-cover rounded-[50px] sm:w-[500px] md:w-[600px] xl:w-[700px]"
             />
           </div>
 
